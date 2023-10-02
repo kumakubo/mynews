@@ -27,7 +27,7 @@ Route::get('/XXX',[AAAController::class,'bbb']);
     
 //課題4
 use App\Http\Controllers\Admin\ProfileController;
-Route::Controller(ProfileController::class)->prefix('admin')->group(function(){
+Route::controller(ProfileController::class)->prefix('admin')->group(function(){
     Route::get('profile/create','add');
     Route::get('profile/edit','edit');
 });
