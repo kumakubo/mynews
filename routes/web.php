@@ -17,19 +17,23 @@ Route::get('/', function () {
     return view('welcome');
 });
 use App\Http\Controllers\Admin\NewsController;
-Route::controller(NewsController::class)->prefix('admin')->group(function() {
-    Route::get('news/create', 'add')->middleware('auth');
+Route::controller(NewsController::class)->prefix('admin')->name('admin.')
+->middleware('auth')->group(function () {
+    Route::get('news/create', 'add')->name('news.add');
+    Route::post('news/create', 'create')->name('news.create');
 });
 
 //課題3
 use App\Http\Controller\Admin\AAAController;
 Route::get('/XXX',[AAAController::class,'bbb']);
     
-//課題4
 use App\Http\Controllers\Admin\ProfileController;
-Route::controller(ProfileController::class)->prefix('admin')->group(function(){
-    Route::get('profile/create','add')->middleware('auth');
-    Route::get('profile/edit','edit')->middleware('auth');
+Route::controller(ProfileController::class)->prefix('admin')->name('admin.')
+->middleware('auth')->group(function () {
+    Route::get('profile/create', 'add')->name('profile.add');
+    Route::get('profile/edit', 'edit')->name('profile.edit');
+    Route::post('profile/create', 'create')->name('profile.create');
+    Route::post('profile/edit', 'updata')->name('updata.edit');
 });
 Auth::routes();
 
