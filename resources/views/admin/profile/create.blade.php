@@ -42,6 +42,7 @@
                         </div>
                     </div>
                     @csrf
+                    <input type="submit" class="btn btn-primary" value="送信">
                 </form>    
             </div>
         </div>
