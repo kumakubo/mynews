@@ -1,4 +1,5 @@
 @extends('layouts.front')
+@section('title','ニュース一覧')
 
 @section('content')
     <div class="container">
@@ -55,5 +56,8 @@
             </div>
         </div>
     </div>
+    </div>
+    <div class="container text-center">
+    <p>ニュース一覧</p>
     </div>
 @endsection
